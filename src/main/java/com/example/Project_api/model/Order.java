@@ -8,22 +8,17 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 import java.util.UUID;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "order_events")
-public class OrderEvent {
-
+@Table(name = "orders")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
-    private Double price;
-    private Long deliveryTimeMinutes;
+    private Double totalPrice;
+    private Long estimatedDeliveryTime;
     private Instant createdAt;
-
 }
-
-
 
